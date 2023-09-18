@@ -3,6 +3,7 @@ import { formatCurrency } from '../../utils/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, deleteItem, getPizzaQuantity } from '../cart/cartSlice';
 import DeleteItem from '../cart/DeleteItem';
+import CartItemQuantity from '../cart/CartItemQuantity';
 
 function MenuItem({ pizza }) {
   const dispatch = useDispatch();
@@ -46,7 +47,10 @@ function MenuItem({ pizza }) {
           )}
 
           {!soldOut && isInCart && (
-            <DeleteItem pizzaId={id} onClick={() => deleteItem(id)} />
+            <>
+              <DeleteItem pizzaId={id} onClick={() => deleteItem(id)} />
+              <CartItemQuantity pizzaId={id} />
+            </>
           )}
 
           {!soldOut && !isInCart && (
