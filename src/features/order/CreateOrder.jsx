@@ -5,6 +5,7 @@ import Button from '../../ui/Button';
 import { useSelector } from 'react-redux';
 import store from '../../store';
 import { clearCart, getCart, getTotalPrice } from '../cart/cartSlice';
+import { formatCurrency } from '../../utils/helpers';
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = str =>
@@ -85,7 +86,7 @@ function CreateOrder() {
           <Button disabled={isSubmitting} type='primary'>
             {isSubmitting
               ? 'Placing order....'
-              : `Order now from $${totalPriorityPrice}`}
+              : `Order now from $${formatCurrency(totalPriorityPrice)}`}
           </Button>
         </div>
       </Form>
