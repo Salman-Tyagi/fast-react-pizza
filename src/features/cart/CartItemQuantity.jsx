@@ -14,7 +14,7 @@ export default function CartItemQuantity({ pizzaId }) {
     <div style={{ display: 'flex', gap: '8px' }}>
       <button
         style={{
-          border: '1px solid #000',
+          backgroundColor: 'rgb(250 204 21 / var(--tw-bg-opacity))',
           borderRadius: '50%',
           width: '20px',
         }}
@@ -25,7 +25,7 @@ export default function CartItemQuantity({ pizzaId }) {
       <span>{currentPizzaQuantity}</span>
       <button
         style={{
-          border: '1px solid #000',
+          backgroundColor: 'rgb(250 204 21 / var(--tw-bg-opacity))',
           borderRadius: '50%',
           width: '20px',
         }}

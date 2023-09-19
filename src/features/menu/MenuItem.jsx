@@ -47,10 +47,16 @@ function MenuItem({ pizza }) {
           )}
 
           {!soldOut && isInCart && (
-            <>
-              <DeleteItem pizzaId={id} onClick={() => deleteItem(id)} />
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+              }}
+            >
               <CartItemQuantity pizzaId={id} />
-            </>
+              <DeleteItem pizzaId={id} onClick={() => deleteItem(id)} />
+            </div>
           )}
 
           {!soldOut && !isInCart && (
