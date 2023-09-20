@@ -9,6 +9,7 @@ import {
   formatDate,
 } from '../../utils/helpers';
 import { useEffect } from 'react';
+import UpdatePriority from '../../ui/UpdatePriority';
 
 function Order() {
   const order = useLoaderData();
@@ -88,6 +89,11 @@ function Order() {
         <p className='font-bold'>
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
+        {!priority && (
+          <span style={{ display: 'flex', justifyContent: 'end' }}>
+            <UpdatePriority order={order} />
+          </span>
+        )}
       </div>
     </div>
   );
